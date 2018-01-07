@@ -11,15 +11,16 @@
 
     <title>Harsh Agrawal: Personal Website</title>
 
+
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
     <link href="css/timeline.css" rel="stylesheet">
-
+   
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -345,6 +346,7 @@
     </section>
 
 
+            
     <!-- Portfolio Grid Section -->
     <section id="projects">
         <div class="container">
@@ -354,25 +356,92 @@
                     <hr class="star-light">
                 </div>
             </div>
+
+            <!--First Row-->
             <div class="row">
-                <div class="col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <img src="img/cloudcv-logo.png" class="img-responsive img-circle" alt="">
+              <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-offset-0 col-sm-12 portfolio-item text-center">
+                        <a href="#EvalAI" class="portfolio-link" data-toggle="modal">
+                            <img src="img/evalai_logo.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-sm-offset-0 portfolio-item text-center">
+                        <a href="#Fabrik" class="portfolio-link" data-toggle="modal">
+                            <img src="img/Fabrik.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-sm-offset-0 portfolio-item text-center">
+                        <a href="#Origami" class="portfolio-link" data-toggle="modal">
+                            <img src="img/Origami.jpg" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="col-xs-12 col-sm-offset-0 col-sm-12 portfolio-item text-center" style="padding-right: 0px; padding-left: 0px">
+                    <a href="#CloudCV" class="portfolio-link" data-toggle="modal">
+                        <img src="img/cloudcv.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-xs-offset-3  col-xs-6 col-sm-offset-0 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <img src="img/aarush_x1.png" class="img-responsive img-circle" alt="">
+              </div>
+            </div>
+            
+            <!--Third Row 2 columns-->
+            <div class="row">
+                <div class="col-xs-6 col-sm-offset-0 col-sm-6 portfolio-item text-center">
+                    <a href="#Garuda" class="portfolio-link" data-toggle="modal">
+                        <img src="img/garuda.jpg" class="img-responsive" alt="">
                     </a>
+                    <br>
+                    Garuda
                 </div>
-                <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <img src="img/garuda_big_2.png" class="img-responsive img-circle" alt="">
+                <div class="col-xs-6 col-sm-offset-0 col-sm-6 portfolio-item text-center">
+                    <a href="#Aarush" class="portfolio-link" data-toggle="modal">
+                        <img src="img/Arush_X1.JPG" class="img-responsive" alt="">
                     </a>
+                    <br>
+                    Aarush X1
+                </div>
+            </div>
+
+            <!--Second Row: 4columns-->
+            <div class="row">
+                <div class="col-xs-6 col-sm-offset-0 col-sm-3 portfolio-item text-center">
+                    <a href="#AMTChat" class="portfolio-link" data-toggle="modal" style="color:#000000;">
+                        <i style="font-size: 150px;" class="fa fa-10x fa-comments" aria-hidden="true"></i>
+                    </a>
+                    <br>
+                    AMT Chat
+                </div>
+                <div class="col-xs-6 col-sm-offset-0 col-sm-3 portfolio-item text-center">
+                    <a href="#Trippr" class="portfolio-link" data-toggle="modal" style="color:#000000;">
+                        <i style="font-size: 150px;" class="fa fa-10x fa-plane" aria-hidden="true"></i>
+                    </a>
+                    <br>
+                    Trippr
+                </div>
+                <div class="col-xs-6 col-sm-offset-0 col-sm-3 portfolio-item text-center">
+                    <a href="#NoteWorthy" class="portfolio-link" data-toggle="modal" style="color:#000000;">
+                        <i style="font-size: 150px;" class="fa fa-10x fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <br>
+                    NoteWorthy
+                </div>
+                <div class="col-xs-6 col-sm-offset-0 col-sm-3 portfolio-item text-center" >
+                    <a href="#Mobishare" class="portfolio-link" data-toggle="modal" style="color:#000000;">
+                        <i style="font-size: 150px;" class="fa fa-10x fa-bluetooth-b" aria-hidden="true"></i>
+                    </a>
+                    <br>
+                    Mobishare
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer class="text-center">
@@ -395,7 +464,7 @@
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="CloudCV" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -405,18 +474,15 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-xs-12">
                         <div class="modal-body">
                             <h2>CloudCV</h2>
-                            <hr class="star-primary">
-                            <img src="img/cloudcv-logo.png" class="img-responsive img-centered" alt="">
-                            <p>We are witnessing a proliferation of massive visual data. Unfortunately scaling existing
-                                computer vision algorithms to large datasets leaves researchers repeatedly solving the same
-                                algorithmic, logistical, and infrastructural problems. Our goal is to democratize computer
-                                vision; one should not have to be a computer vision, big data and distributed computing expert
-                                to have access to state-of-the-art distributed computer vision algorithms. We present CloudCV,
-                                a comprehensive system to provide access to state-of-the-art distributed computer vision
-                                algorithms as a cloud service through a Web Interface and APIs.</p>
+                            <br>
+                            <img src="img/cloudcv_banner.png" class="img-responsive img-centered" alt="">
+                         
+                            <p> CloudCV began in the summer of 2013 as a research project within the Machine Learning and Perception lab at Virginia Tech (now at Georgia Tech), with the ambitious goal of making platforms to make AI research more reproducible. We’re a young community working towards enabling developers, researchers, and fellow students to build, compare and share state-of-the-art Artificial Intelligence algorithms. We believe that one shouldn’t have to be an AI expert to have access to cutting edge vision algorithms. Likewise, researchers shouldn’t have to worry about building a service around their deep learning models to showcase and share it with others. </p>
+
+                            <p> We have participated in the past three installments of Google Summer of Code (2015-2017), over the course of which our students built several excellent tools and features.
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href="http://cloudcv.org">Website</a>
@@ -431,6 +497,19 @@
                                     </strong>
                                 </li>
                             </ul>
+                            
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h3> Python APIs in action</h3>
+                                    <img class="img-responsive" src="https://raw.githubusercontent.com/Cloud-CV/py-cloudcv/b3bb1a362fbd2f3a250419a078d3987db90ff0d7/python_screenshot.gif">
+                                </div>
+                                <div class="col-xs-6">
+                                    <h3> Matlab APIs in action</h3>
+                                    <img class="img-responsive" src="https://raw.githubusercontent.com/Cloud-CV/mat-cloudcv/master/matlab_screenshot.gif">
+
+                                </div>
+                            </div>
+
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -438,7 +517,7 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="Aarush" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -448,21 +527,52 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12">
                         <div class="modal-body">
                             <h2>Aarush X-1</h2>
-                            <hr class="star-primary">
-                            <img src="img/aarush_x1.png" class="img-responsive img-centered" alt="">
+                            <br>
+                            <img src="img/Arush_X1.JPG" class="img-responsive img-centered" alt="">
                             <p>Aarush is a prototype of the UAV developed with financial resources and engineering mentoring support
                                 from Lockheed Martin Corporation. Traffic Management, Geomatics, Mining Surveillance, Border patrol
-                                are just some of the areas in which this UAV can be put to effective, efficient use. Salient features include: </p>
+                                are just some of the areas in which this UAV can be put to effective, efficient use. </p>
+                            <br>
+                            <h3> Teaser Video </h3>
+                            <br>
+                            <iframe src="https://www.youtube.com/embed/BL-Rbf3iEKI" frameborder="0" allowfullscreen style="position: relative; height: 750px; width: 100%;"></iframe>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="Origami" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>Origami</h2>
+                            <br>
+                            <img src="img/origami_banner.png" class="img-responsive img-centered" alt="">
+                            <p>Origami (previously called CloudCV-fy your code) is a AI-as-a-service solution that allows researchers to easily convert their deep learning models into an online service that is widely accessible to everyone without the need to setup the infrastructure, resolve the dependencies, and build a web service around the deep learning model. By lowering the barrier to entry to latest AI algorithms, we provide developers, researchers and students the ability to access any model using a simple REST API call.</p>
                             <ul class="list-inline item-details">
                                 <li>
-                                    <strong><a href="http://uasdtu.com/systems.htm">Website</a>
+                                    <strong><a href="http://origami.cloudcv.org">Website</a>
                                     </strong>
                                 </li>
                                 <li>
-                                    <strong><a href="https://www.youtube.com/watch?v=BL-Rbf3iEKI">Flight Video</a>
+                                    <strong><a href="http://github.com/Cloud-CV/Origami">Github</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="https://gitter.im/Cloud-CV/Origami">Gitter Channel</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -473,7 +583,7 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="EvalAI" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -483,25 +593,301 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>EvalAI</h2>
+                            <br>
+                            <img src="img/evalai_logo.png" class="img-responsive img-centered" alt="">
+                            <h3> The Problem: Benchmarking progress in AI is hard </h3>
+
+                            <p>
+                                Artificial Intelligence (AI) as a field has progressed significantly in the recent years. A major portion of this progress can be attributed to the proposal of bold new multi-modal AI tasks (recognition, captioning, VQA, Visual Dialog) together with curation of associated datasets -- Common Objects in COntext (COCO), ImageNet, Visual Question Answering (VQA), Stanford Question Answering Dataset (SQUAD), etc. Moving forward, with more datasets being released and new tasks being proposed, comparing a new algorithm with existing algorithms is nontrivial and is hindered by multiple factors:
+                            
+                                <ol class="list item-details">
+                                    <li>Different evaluation schemes for the same task.</li>
+                                    <li>Implementation of the different metric or evaluation across different splits of the dataset.</li>
+                                    <li>Computational bottlenecks on evaluation servers holding unseen test data.</li>
+                                </ol>
+                            </p>
+                            
+                            <h3>The Solution: EvalAI</h3>
+                            <p>
+                                EvalAI is an open source web platform that aims to help researchers, students and data scientists create, collaborate, and participate in AI challenges. By simplifying and standardizing the process of benchmarking AI, we want to circumvent many of the factors impeding the rate of progress in AI. Our plan is to do this in the following ways: 
+                            
+                                <ol class="list item-details">
+                                    <li>Reduced barrier to entry for hosting AI challenges.</li>
+                                    <li>Standardized evaluation protocols (same dataset splits and metrics) for measuring the performance of different algorithms on a given task.<br></li>
+                                    <li>Central public leaderboards (“who is the best on X?”).</li>
+                                    <li>Faster evaluation of submissions using parallelization techniques that take advantage of distributed multi-core machines.</li>
+                                </ol>
+                            </p>
+
+                            <h3> Important links: </h3>
+                            <ul class="list-inline item-details">
+                                <li>
+                                    <strong><a href="https://evalai.cloudcv.org">Website</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="https://github.com/Cloud-CV/EvalAI">Github</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="http://evalai.readthedocs.io/en/latest/">Documentation</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="https://gitter.im/Cloud-CV/EvalAI">Gitter Link</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                    
+                            <h3> How it is different from Kaggle? </h3>
+                            <p>
+                                The central differences are:
+                            
+                            <ul class="list item-details">
+                                <li> Custom Evaluation Protocols and Phases: We have designed versatile backend framework that can support user-defined evaluation metrics, various evaluation phases, private and public leaderboard. </li>
+                                <li> Faster Evaluation: The backend evaluation pipeline is engineered so that submissions can be evaluated parallelly using multiple cores on multiple machines via mapreduce frameworks offering a significant performance boost over similar web AI-challenge platforms.</li>
+                                <li>Portability: Since the platform is open-source, users have the freedom to host challenges on their own private servers rather than having to explicitly depend on Cloud Services such as AWS, Azure, etc.</li>
+                                <li>Centralized Leaderboard: Challenge Organizers whether host their challenge on EvalAI or forked version of EvalAI, they can send the results to main EvalAI server. This helps to build a centralized platform to keep track of different challenges.</li>
+                                
+                            </ul>
+                            </p>
+                            
+
+                            <h3> Performance comparisons with other platforms: </h3>
+
+                            <p> EvalAI hosted Visual Question Answering (VQA) 2017 challenge as its first challenge. To give some background, last year, the VQA 2016 challenge was hosted on Codalab, and on average evaluation would take ~10 minutes. This year, the dataset for the VQA Challenge 2017 was twice as large. Despite this, we have found that our parallelized backend took only ~130 seconds to evaluate on the whole test set of VQA dataset. </p>
+
+                            <h3> Research Organizations using EvalAI: </h3>
+                            
+                            <div class="row">
+                            <div class="col-xs-3"><img src="https://evalai.cloudcv.org/dist/images/organizations/fb.png" class="img-responsive img-centered" alt=""></div>
+                            <div class="col-xs-3"><img src="https://evalai.cloudcv.org/dist/images/organizations/google.png" class="img-responsive img-centered" alt=""></div>
+                            <div class="col-xs-3"><img src="https://evalai.cloudcv.org/dist/images/organizations/mapillary.png" class="img-responsive img-centered" alt=""></div>
+                            <div class="col-xs-3"><img src="https://evalai.cloudcv.org/dist/images/organizations/gt.png" class="img-responsive img-centered" alt=""></div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="Fabrik" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>Fabrik</h2>
+                            <br>
+                            <img src="https://github.com/Cloud-CV/Fabrik/raw/master/example/fabrik_demo.gif?raw=true" class="img-responsive img-centered" alt="">
+                            <p> Fabrik is an online collaborative platform to build, visualize and train deep learning models via a simple drag-and-drop interface. It allows researchers to collaboratively develop and debug models using a web GUI that supports importing, editing and exporting networks written in widely popular frameworks like Caffe, Keras, and TensorFlow.</p>
+                            <ul class="list-inline item-details">
+                                <li>
+                                    <strong><a href="http://fabrik.cloudcv.org">Website</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="http://github.com/Cloud-CV/Fabrik">Github</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="https://gitter.im/Cloud-CV/IDE">Gitter Channel</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="Garuda" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="modal-body">
                             <h2>Garuda</h2>
-                            <hr class="star-primary">
-                            <img src="img/garuda_big_2.png" class="img-responsive img-centered" alt="">
+                            <br>
+                            <img src="img/garuda.jpg" class="img-responsive img-centered" alt="">
                             <p>GARUDA, a modified Sig Rascal 110 R/C aircraft along with its Ground Control System is capable of performing
                                 autonomous flight & navigation, simultaneously gathering actionable surveillance data using optical sensors.
                                 The system includes commercially available autopilot system, Piccolo II for control & navigation with a customized
                                 imagery system capable of capturing & transmitting high definition images of the hostile territory simultaneously
                                 processing it to deliver actionable intelligence. The Ground Control Station (GCS) and the aircraft communicate
                                 in real time to provide situational awareness and safe and reliable flight. Due to it's modular design, the entire system
-                                can be brought to a flying state in less than 20 minutes.</p>
+                                can be brought to a flying state in less than 20 minutes. We participated with this system in Student Unmanned Aerial Systems (SUAS) 2012 competition and secured 3rd position.</p>
+                            
+                            <p> Garuda was developed as part of the Unmanned Aerial Systems - Delhi Technological University (UAS-DTU) project. UAS-DTU is a team of undergraduate students of Delhi Technological University, devoted to developing indigenous technological solutions for UAVs. Our ultimate goal was to reduce India's reliance on off-the-shelf products and foreign UAVs. Focussing on humanitarian uses of UAVs, we are developing a new generation of low-cost Image Processing and Flight Control Systems to aid in Surveillance and Reconnaissance.</p>
+
+                            <p>The team, under mentorship and funding from Lockheed Martin, is the first to develop a Next Generation Urban UAS - Aarush X1, that is tailor- made for surveillance in urban jungles like Delhi and Mumbai. The team signed its first MoU with Lockheed Martin in 2009. The second MoU was signed in 2013, under which a new version of Aarush (Aarush X2) is being developed. The team annually participates in AUVSIs SUAS competition, which stands for Student Unmanned Aerial Systems competition. The competition is held in Maryland, USA where more than 30 universities come every year with their UAVs hoping to win the competition. We are the first team from India to participate in this competition (Our first participation was in 2009), and also the first team from India to achieve a podium finish (We were ranked 3rd in 2012). In 2013, the team ranked 6th. After these years of experience through the competition and Lockheed Martin project, we are now capable of manufacturing Unmanned Aerial Systems for the market with the capabilities of Aerial Imagery, and GCS Softwares for the processing of these images.</p>
+                            <br>
+                            <h3>Video: Journey of UAS-DTU</h3>
+                            <br>
+                            <iframe src="http://www.facebook.com/video/embed?video_id=10151167933007739" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                            <br>
+                            <h3>Important Links</h3>
                             <ul class="list-inline item-details">
                                 <li>
-                                    <strong><a href="http://uasdtu.com/systems.htm">Website</a>
+                                    <strong><a href="img/journal_2012.pdf">Journal Paper</a>
+                                    </strong>
+                                </li>
+                                <li>
+                                    <strong><a href="http://www.thehindu.com/todays-paper/tp-features/tp-educationplus/laurels-for-team-uasdtu/article3796999.ece">Article in The Hindu</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="AMTChat" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>AMT Chat Interface</h2>
+                            <br>
+                            <img src="img/amtchat.png" class="img-responsive img-centered" alt="">
+                            <p>Source for the two-person chat interface used to collect the VisDial dataset on Amazon Mechanical Turk. A demo is available <href src="https://godel.ece.vt.edu/visdial_chat/">here</href> (open in two separate tabs to be paired for conversation).</p>
+                            <ul class="list-inline item-details">
+                                <li>
+                                    <strong><a href="https://github.com/batra-mlp-lab/visdial-amt-chat">Github</a>
                                     </strong>
                                 </li>
 
                             </ul>
+                            <h3> How things works </h3>
+                            <p>
+                                The real-time chat interface is built using Node.js and Socket.io. We use Redis to maintain a pool of images for live HITs and all data finally resides in a MySQL database.
+                                <br><br>
+                                A database table stores images from the COCO dataset each with a randomly picked caption. A batch of images from this table are then pushed to a Redis list for launching HITs. The web server corresponding to the chat interface pairs two AMT workers, assigns them roles (questioner or answerer) and shows corresponding interface, picks an image from the Redis list to collect data on and saves their conversation in the database, also marking that image as 'complete' once the HIT is done. This happens in parallel so workers aren't left waiting, and the server ensures workers have unique ids. Disconnects are handled gracefully — remaining worker is asked to continue asking questions or providing facts (captions) up to 10 messages. Once the HITs are complete, scripts in mturk_scripts/approve can be used to review, approve, reject HITs and pay workers.
+
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="NoteWorthy" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>NoteWorthy</h2>
+                            <br>
+                            <div class="row">
+                                <div class="col-xs-3 col-md-3">
+                                    <img src="img/noteworthy1.png" class="img-responsive img-centered" alt=""></div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img src="img/noteworthy2.png" class="img-responsive img-centered" alt="" ></div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img src="img/noteworthy3.png" class="img-responsive img-centered" alt=""></div>
+                                <div class="col-xs-3 col-md-3">
+                                    <img src="img/noteworthy4.png" class="img-responsive img-centered" alt=""></div>
+                            </div>
+                            <div class="row">
+                            <p>What if you could replace the slow and monotone professor with complete and efficient notes? Rather than begging for them from the smartest students in class, Noteworthy provides a smart alternative ecosystem of notes. Whether you've simply wanted to skip a class without the academic problems, or you wanted to reinforce your education, Noteworthy gives you the greatest studying experience. Noteworthy, an app founded at MHacks, allows for easy and seamless digitization of notes. Noteworthy takes the noteworthiest notes from across the world, and brings them to you anywhere. With course, professor, and date choices, students can find the right notes for the right class on the right day. Noteworthy will save you time and get you better results for your education.</p>
+
+                            <p>Noteworthy was developed while participating in MHacks 2014 - one of the biggest 48 hour hackathon competition orgamized by University of Michigan, Ann Arbor</p>
+                            </div>
+
+                            
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="Trippr" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Trippr</h2>
+                            <br>
+                            
+                            <p> Trippr is a collaborative trip planning app powered by IBM Watson based personal assistant. This app was developed while participating 
+                            in Angel Hacks, Seattle - a 24 hour hackathon in the summer of 2013. It consisted of a combination of Android app, Pebble Smartwatch app and a Web app through which
+                            people can chat online with their friends, ask questions to a smart personal assistant and book iteneraries. </p>
+
+                            <p> The personal assistant powered by IBM Watson can hold conversation with the group of users to suggest popular destinations, restaurants, cheapest flights. It also automatically built an itenerary based on users choices. This app provided smart features similar to Google Trips.</p>
+
+                            <p> Our app also won the "Best use of Respoke API" award.</p>
+                            
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="Mobishare" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="modal-body">
+                            <h2>Mobishare</h2>
+                            <br>
+                            <img src="img/MSR_TechV2013.jpg" class="img-responsive img-centered" alt="">
+                            <p>
+                                
+                            </p>
+                            
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
