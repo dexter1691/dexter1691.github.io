@@ -533,6 +533,7 @@ footer .footer-below {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
+    text-align: left
   }
   @media (min-width: 30em) {
     .band {
@@ -544,7 +545,11 @@ footer .footer-below {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-  
+  .band a:hover, a:focus {
+    color: #000000;
+    text-decoration: none; 
+    text-align: left;
+  }
   .card {
     background: white;
     text-decoration: none;
@@ -597,6 +602,10 @@ footer .footer-below {
     padding-bottom: 20%;
     left: 10%;
     margin-top: 5%;
+  }
+
+  .item {
+    grid-column: span 2;
   }
 
   @media (min-width: 60em) {
