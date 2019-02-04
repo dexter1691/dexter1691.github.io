@@ -9,6 +9,10 @@ Modules - reusable parts of our design
   width: 90%;
   max-width: 1170px;
   margin: 0 auto;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-weight: 14px;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 .cd-container::after {
   /* clearfix */
@@ -186,6 +190,7 @@ Modules - reusable parts of our design
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
+  text-align: justify
 }
 .cd-timeline-content:after {
   content: "";
@@ -196,15 +201,12 @@ Modules - reusable parts of our design
   color: #303e49;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-  font-size: 13px;
-  font-size: 0.8125rem;
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
 }
 .cd-timeline-content p {
   margin: 1em 0;
-  line-height: 1.6;
 }
 .cd-timeline-content .cd-read-more {
   float: right;
@@ -236,11 +238,11 @@ Modules - reusable parts of our design
     font-size: 16px;
   }
   .cd-timeline-content p {
-    font-size: 16px;
+    font-size: 14px;
 
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 16px;
+    font-size: 14px;
 
   }
 }

@@ -3,13 +3,19 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+ @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+ 
 body {
-    background-color: #e9f0f5;
+    background-color: #f5f7f8;
+    font-family: sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
-p {
-    font-size: 18px;
+@media (min-width: 1200px) {
+    .container {
+      width: 940px;
+    }
 }
 
 p.small {
@@ -77,10 +83,10 @@ header .container {
 
 header .intro-text .name {
     /*display: block;*/
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 header .intro-text .skills {
@@ -162,15 +168,35 @@ section {
 }
 
 section#timeline {
-    padding-top: 75px;
+    padding-top: 0px;
 }
 
 section h2 {
     margin: 0;
 }
 
+section#news-list ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+section#news-list ul li {
+    display: flex;
+    width: 100%;
+}
+section#news-list ul li span {
+    font-weight: 100;
+    font-size: 15px;
+    margin-right: 2rem;
+    font-family: 'Abril Fatface', serif;
+}
+
+
 section#projects {
     padding-bottom: 100px;
+    text-align: justify
 }
 
 #projects img {
@@ -466,6 +492,7 @@ footer .footer-below {
     }
 }
 .pubd {
+    text-align: justify;
     font-size: 14px;
     font-weight: 300;
     color: #000000;
@@ -498,3 +525,97 @@ footer .footer-below {
     margin: 5px 2px;
     display: inline-block;
 }
+
+.band {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+  @media (min-width: 30em) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 60em) {
+    .band {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+  }
+  .card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+    -webkit-transform: scale(1.01, 1.01);
+    transform: scale(1.01, 1.01);
+  }
+  .card article {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .card h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+  .card p {
+    flex: 1;
+    line-height: 1.4;
+  }
+  .card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+  .card .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+  .item-1 .thumb {
+    max-width: 100%;
+    margin-bottom: 0%;
+    padding-bottom: 20%;
+    left: 10%;
+    margin-top: 5%;
+  }
+
+  @media (min-width: 60em) {
+    .item-1 {
+      grid-column: 1 / span 2;
+    }
+    .item-5 {
+        grid-column:2 / span 2;
+    }
+    .item-1 .thumb {
+        max-width: 100%;
+        padding-bottom: 20%;
+        position: relative;
+        left: 10%;
+        margin-top: 5%;
+     }
+     .item-5 .thumb {
+        max-width: 100%;
+        padding-bottom: 40%;
+        background-position: top;
+    }
+  }
