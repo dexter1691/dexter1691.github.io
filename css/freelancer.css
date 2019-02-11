@@ -8,6 +8,8 @@
 body {
     background-color: #f5f7f8;
     font-family: sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
     font-weight: 300;
     -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -111,7 +113,9 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     .navbar-fixed-top {
-        padding: 5px 0;
+        
+        max-width: 100%;
+        overflow-x: hidden;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -158,6 +162,8 @@ header .intro-text .skills {
 .navbar-default,
 .navbar-inverse {
     border: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar-about-me-hidden {
