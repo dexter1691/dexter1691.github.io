@@ -228,6 +228,10 @@ section.success a.active {
     }
 }
 
+#about .row {
+    padding: 25px 0 0px 0;
+}
+
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
