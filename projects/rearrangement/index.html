@@ -3,284 +3,277 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="keywords"
     content="object rearrangement, habitat, habitat-sim, habitat-api, house cleanup, navigation, deep learning, reinforcement learning, computer vision, neural networks, georgia tech, fair">
 
-  <title>House Cleanup in Habitat</title>
+  <title>Object Rearrangement in Habitat</title>
   <meta name="description"
-    content="Situating vision-and-language navigation in continuous environments to bring instruction following agents closer to reality">
+    content="Building the rearrangement scenario in Habitat">
 
-  <!--Open Graph Related Stuff-->
-  <meta property="og:title" content="House Cleanup in Habitat" />
-  <meta property="og:url" content="https://dexter1691.github.io/rearrangement/" />
-  <meta property="og:description"
-    content="Situating vision-and-language navigation in continuous environments to bring instruction following agents closer to reality" />
-  <meta property="og:site_name" content="House Cleanup in Habitat" />
-  <meta property="og:image" content="https://jacobkrantz.github.io/vlnce/static/img/vlnce/vlnce-setting.png" />
-  <meta property="og:image:url" content="https://jacobkrantz.github.io/vlnce/static/img/vlnce/vlnce-setting.png" />
-
-  <!-- CSS  -->
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/freelancer.css">
-  <link rel="stylesheet" type="text/css" href="/css/rearrangement.css">
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
-  <script src="js/modernizr.js"></script>
-
-  <!-- <link rel="stylesheet" type="text/css" href="/vlnce/static/css/main.2f91a3.css" media="screen,projection"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-
-  <!-- <div class="top-strip"></div> -->
-  <div class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/rearrangement/">House Cleanup in Habitat</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      <div class="navbar-brand">
+        <a class="navbar-item" style="padding-right: 2rem;">
+          <b>Object Rearrangement in Habitat</b>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="#overview">Task Description</a>
-          </li>
-          <li>
-            <a href="#data">Data</a>
-          </li>
-          <li>
-            <a href="#action">Embodiement</a>
-          </li>
-          <li>
-          <li>
-            <a href="#action">Action Specification</a>
-          </li>
-          <li>
-            <a href="#Action Specification">Metrics</a>
-          </li>
-          <li>
-            <a href="https://github.com/dexter1691/">Colab Notebook</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
+      <hr class="navbar-divider">
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#task">
+            Task Description
+          </a>
+
+          <a class="navbar-item" href="#data">
+            Data
+          </a>
+
+          <a class="navbar-item" href="#embodiement">
+            Agent Specification
+          </a>
+
+          <a class="navbar-item" href="#evaluation">
+            Evaluation
+          </a>
+          <a class="navbar-item" href="#code">
+            Evaluation
+          </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
             <a href="//gatech.edu">
               <img style="height:20px;" src="/img/gt.jpg">
             </a>
-          </li>
-          <li>
-            <a href="//research.fb.com">
-              <img style="height:15px;" src="/img/fair.jpg">
+          </div>
+          <div class="navbar-item">
+            <a href="//gatech.edu">
+              <img style="height:20px;" src="/img/fair.jpg">
             </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="page-content">
-      <p><br /></p>
-
-      <h1 id="overview">Vision and Language Navigation in Continuous Environments</h1>
-
-      <div class="row">
-
-        <div class="col-xs-12 text-center">
-          <br />
-          <img src="/vlnce/static/img/vlnce/VLNCE_vs_VLN.gif" alt="VLNCE trajectory gif" />
-        </div>
-
-        <div class="col-xs-12">
-          <br />
-          <p>
-            Vision and Language Navigation in Continuous Environments (VLN-CE) is an instruction-guided navigation task
-            with crowdsourced instructions, realistic environments, and unconstrained agent navigation. The agent is
-            given first-person (egocentric) vision and a human-generated instruction, such as <i>"Go down the hall and
-              turn left at the wooden desk. Continue until you reach the kitchen and then stop by the kettle".</i> Using
-            this input alone, the agent must take control actions (e.g. <b>MOVE-FORWARD 0.25m</b>, <b>TURN-LEFT 15
-              degrees</b>) to navigate to the goal. VLN-CE lifts assumptions of the <a
-              href="https://bringmeaspoon.org/">
-              original VLN task</a> and aims to bring simulated agents closer to reality.
-          </p>
-          <br />
-        </div>
-
-        <div class="col-xs-12 text-center">
-          <img src="/vlnce/static/img/vlnce/vlnce-setting.png" alt="VLNCE setting" />
-        </div>
-
-        <div class="col-xs-12 text-center">
-          <br />
-          <h3>
-            <b>
-              The VLN-CE codebase and baseline models are available at:<br /><a class="poplink"
-                href="https://github.com/jacobkrantz/VLN-CE">github.com/jacobkrantz/VLN-CE</a>
-            </b>
-          </h3>
-        </div>
-      </div>
-      <hr />
-
-      <div class="row">
-        <div class="col-xs-12">
-          <span style="color:#e74c3c;font-weight:400;">Jul 2020</span> — Paper accepted to <b>ECCV 2020</b>!
-        </div>
-        <div class="col-xs-12">
-          <span style="color:#e74c3c;font-weight:400;">Apr 2020</span> — <a
-            href="https://github.com/jacobkrantz/VLN-CE">PyTorch code for training and evaluating VLN-CE models</a> is
-          now available!
-        </div>
-        <div class="col-xs-12">
-          <span style="color:#e74c3c;font-weight:400;">Dec 2019</span> — <a
-            href="https://github.com/facebookresearch/habitat-api">VLN-CE v1 dataset</a> is now available in the
-          official Habitat API!
-        </div>
-      </div>
-      <hr />
-
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments</h3>
-        </div>
-        <div class="col-xs-12" style="margin-top: 3px; color: #666;">
-          Jacob Krantz, Erik Wijmans, Arjun Majumdar, Dhruv Batra, Stefan Lee<br />
-        </div>
-        <div class="col-xs-12" style="margin-top: 3px; color: #666;">
-          ECCV 2020
-          [<a href="/vlnce/bib/vlnce.bib.txt">Bibtex</a>]
-          [<a href="https://arxiv.org/abs/2004.02857">PDF</a>]
-          [<a href="https://github.com/jacobkrantz/VLN-CE">Code</a>]
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <a href="https://arxiv.org/abs/2004.02857">
-            <img class="thumb" src="/vlnce/static/img/vlnce/thumb.jpg" />
-          </a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <img src="/vlnce/static/img/vlnce/both_models.png" />
-        </div>
-      </div>
-      <p><br /></p>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="vid-container">
-            <iframe src="https://www.youtube.com/embed/SRW9u_w5AV0" allowfullscreen=""></iframe>
           </div>
         </div>
+
       </div>
-      <p><br /></p>
-      <hr />
-      <!-- 
-<h1 id="people">People</h1>
-
-<p><br /></p>
-<div class="row">
-  <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
-    <a href="https://jacobkrantz.github.io/">
-      <img class="people-pic" src="/vlnce/static/img/people/jacob.jpg" />
-    </a>
-    <div class="people-name">
-      <a href="https://jacobkrantz.github.io/">Jacob Krantz</a><br />
-      <affiliation>Oregon State University</affiliation>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-6">
-    <a href="https://wijmans.xyz">
-      <img class="people-pic" src="/vlnce/static/img/people/erik.jpg" />
-    </a>
-    <div class="people-name">
-      <a href="https://wijmans.xyz">Erik Wijmans</a><br />
-      <affiliation>Georgia Tech &amp; Facebook AI Research</affiliation>
+
+  </nav>
+  <section class="section" id="task">
+    <div class="container">
+      <h1 class="title">
+        Task Description
+      </h1>
+      <figure class="column is-half is-offset-one-quarter image is-16-by-9">
+        <img src="img/input_frame.png">
+        <div class="has-text-centered"> Figure 1: An example of agent’s egocentric view during anepisode.
+          Each episode contains 2-5 YCB objects that needto be rearranged in an indoor environment. The blue circle indicates the cross-hair for the 
+          magic pointer grab action.
+        </div>
+      </figure>
+      <br>
+      <p>
+        In the rearrangement task, the agent is spawned randomly in a
+        house and is asked to find a small set of objects scattered
+        around the house and place them in their desired final position as efficiently as possible.
+      </p>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-6">
-    <a href="https://arjunmajum.github.io/">
-      <img class="people-pic" src="/vlnce/static/img/people/arjun.jpg" />
-    </a>
-    <div class="people-name">
-      <a href="https://arjunmajum.github.io/">Arjun Majumdar</a><br />
-      <affiliation>Georgia Tech</affiliation>
+  </section>
+
+  <section class="section" id="data">
+    <div class="container">
+      <h2 class="title">
+        Data
+      </h2>
+      
+      <div class="columns is-desktop">
+        <div class="column">
+          <p class="has-text-justified">
+            <b>Scenes:</b> We use a manually-selected subset of 48 photorealistic scans of indoor environments from the
+            Gibson dataset.
+            These 55 scenes are uncluttered ‘empty’ apartments/houses, i.e. they contain no or very few furniture as part
+            of the scanned mesh. Scanned object meshes are programmatically inserted into these scenes to create episodes.
+            This combination of empty houses and inserted objects allows
+            for controlled generation of training and testing episodes.
+          </p>
+          <br>
+          <p class="has-text-justified">
+            <b>Objects</b>: We use object scans from the YCB Dataset. These objects are small enough that they can pass
+            through doors
+            and hallways within the house.
+          </p>
+          <br>
+          <p class="has-text-justified">
+            <b>Episodes</b>: As illustrated in Figure 1, each episode requires the agent to rearrange
+            2-5 objects. At the beginning of each episode, the agent is provided with the goal location and rotation
+            of each object via point-coordinates (3D coordinate of the center of mass of the object). The agent is also
+            given the spawn location and rotation of the agent, initial object location, rotation, and type in the
+            environment.
+            Finally, for each object, the episode defines goal location and rotation for each object’s centre-of-mass (COM).
+            <!-- Overall, the 55 scenes are split into 35 training scenes, 10 validation scenes, and 10 test scenes. 
+            Each training scene has 1000 episodes while validation and test scenes have 100 episodes each. 
+            Overall, there are 35000 training, 1000 validation, and 1000 test episodes.  -->
+          </p>
+          <br>
+          <div class="is-size-5 has-text-weight-medium">
+            Download Link: <a> </a>
+          </div>
+        </div>
+        <div class="column" style="margin-top: -4rem;">
+          <pre>
+            <code>
+              {  
+                'episode_id': 0,  
+                'scene_id': 'data/scene_datasets/coda/coda.glb’,  
+                'start_position': [-0.15, 0.18, 0.29],  
+                'start_rotation': [-0.0, -0.34, -0.0, 0.93]  
+                'objects’: [
+                  {    
+                    'object_id': 0,    
+                    'object_template': 'data/test_assets/objects/chair',    
+                    'position': [1.77, 0.67, -1.99],    
+                    'rotation': [0.0, 0.0, 0.0, 1.0]  
+                  }
+                ],   
+                'goals’: [
+                  {    
+                    'position': [4.34, 0.67, -5.06],    
+                    'rotation': [0.0, 0.0, 0.0, 1.0]   
+                  }
+                ],
+              }
+            </code>
+          </pre>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-6">
-    <a href="https://www.cc.gatech.edu/~dbatra/">
-      <img class="people-pic" src="/vlnce/static/img/people/dhruv.jpg" />
-    </a>
-    <div class="people-name">
-      <a href="https://www.cc.gatech.edu/~dbatra/">Dhruv Batra</a><br />
-      <affiliation>Georgia Tech &amp; Facebook AI Research</affiliation>
+  </section>
+  <section class="section" id="embodiement">
+    <div class="container">
+      <h2 class="title">
+        Agent Specification
+      </h2>
+      <p class="has-text-justified">
+        <b>Agent:</b> We use a manually-selected subset of 48 photorealistic scans of indoor environments from the
+        Gibson dataset.
+        These 45 scenes are uncluttered ‘empty’ apartments/houses, i.e. they contain no or very few furniture as part
+        of the scanned mesh. Scanned object meshes are programmatically inserted into these scenes to create episodes.
+        This combination of empty houses and inserted objects allows
+        for controlled generation of training and testing episodes.
+      </p>
+      <br>
+      <p class="has-text-justified">
+        <b>Sensors</b>: We use object scans from the YCB Dataset. These objects are small enough that they can pass
+        through doors
+        and hallways within the house.
+      </p>
+      <br>
+      <div class="columns">
+        <div class="column is-one-third is-offset-one-third">
+          <figure class="image is-16-by-9">
+            <img src="img/grab_release.png">
+            <div class="has-text-justified"> Figure 2: Grab Release Action uses magic pointer abstraction to pick nearby
+              objects.
+              Any object under a fixed crosshair in the agent’s viewport can be picked by the agent if it is within a
+              certain distance threshold.
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <p class="has-text-justified">
+          <b>Actions</b>: The action space for the rearrangement
+          task consists of navigation and interactive actions.
+        <ol>
+          <li><b>Move Forward:</b> The agent moves forward by 0.25m</li>
+          <li><b>Turn Right:</b> The agent turns right by 10 degrees</li>
+          <li><b>Turn Left:</b> The agent turns right by 10 degrees</li>
+          <li><b>Grab:</b> Grabs an object using the magic pointer abstraction discussed earlier to pick nearby objects
+            that are visible in the
+            agent’s field of view.</li>
+          <li><b>Release:</b> Realeases an object that the agent is holding.</li>
+        </ol>
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-6">
-    <a href="http://web.engr.oregonstate.edu/~leestef/" style="border:0;">
-      <img class="people-pic" src="/vlnce/static/img/people/stefan.jpg" />
-    </a>
-    <div class="people-name">
-      <a href="http://web.engr.oregonstate.edu/~leestef/">Stefan Lee</a><br />
-      <affiliation>Oregon State University</affiliation>
+  </section>
+  <section class="section" id="evaluation">
+    <div class="container">
+      <h2 class="title">
+        Evaluation
+      </h2>
+      <p>
+        In the object rearrangement scenario, task progress is measured by how close the object is placed with respect to the goal pose. We measure the following metrics: 
+        <ol class="is-large">
+          <li>
+            <b>Average distance to target (\(d_{T}\))</b> measures the distance between the object's current location and the desired goal location. 
+          </li>
+          <li>
+            <b>Episode Success (\(S\))</b> measures whether the episode is successful or not. 
+            An episode is considered successful (\(S=1\)) if the all objects stops within 0.50 meters of their respective goal locations, 
+            otherwise the episode is marked as failed (\(S=0\)).
+          </li>
+          <li>
+            <b>Object Placement Success \(PS\)</b> which measures the percentage of objects 
+            placed successfully according to the success criteria for each episode.
+          </li>
+          <li>
+            <b>Success Weighted by Path Length (SPL)</b> intuitively captures how closely the agent followed the optimal path and successfully completed the episode.. 
+            Given the length of the optimal-path trajectory \(l\) and the length of an agent's path \(l_a\) for an episode. 
+            SPL is defined as \(\frac{l}{\text{max}(l_a, l)}\). SPL intuitively captures how closely the agent followed the optimal path and successfully completed the episode.
+          </li>
+        </ol>
+        
+        
+      </p>
     </div>
-  </div>
-</div>
-<hr /> -->
-      <!-- 
-<h1 id="acknowledgements">Acknowledgements</h1>
-
-<p><a name="/vlnce/acknowledgements"></a></p>
-<div class="row">
-  <div class="col-xs-12">
-    <p>
-      We thank Anand Koshy for his implementation of the dynamic time warping metric. The Georgia Tech effort was
-      supported in part by NSF, AFRL, DARPA, ONR YIPs, ARO PECASE, Amazon. The Oregon State effort was supported
-      in part by DARPA. The views and conclusions contained herein are those of the authors and should not be
-      interpreted as necessarily representing the official policies or endorsements, either expressed or implied,
-      of the U.S. Government, or any sponsor.
-    </p>
-  </div>
-</div>
-<hr />
-
-<div class="row">
-  <div class="col-xs-6">
-    <span style="font-weight:400;">Email</span> — krantzja@oregonstate.edu
-  </div>
-  <br />
-</div> -->
-
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2 class="title">
+        Code
+      </h2>
+      <p>
+        <b>Coming Soon on Habitat Lab!</b> Follow along progress <a href="https://github.com/facebookresearch/habitat-lab/pull/470">here. </a>
+      </p>
+      <p>
+        <b>Tutorial: </b>You can watch how to build an interactive task in Habitat Lab by following the tutorial here: 
+      </p>
+      <p>
+        <a href="https://youtu.be/KbbfD7RlJLM?list=PLGywud_-HlCORC0c4uj97oppQrGiB6JNy">Youtube Video </a>,         
+        <a href="https://colab.research.google.com/github/facebookresearch/habitat-lab/blob/master/examples/tutorials/colabs/Habitat_Interactive_Tasks.ipynb">Colab Notebook </a>
+      </p>
     </div>
-  </div>
-
-  <br>
-
-  <!-- Google analytics -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-163181097-2', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
+  </section>
 </body>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+  $(document).ready(function () {
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function () {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+    });
+  });
+</script>
 
 </html>
