@@ -103,7 +103,7 @@
       <div class="columns is-desktop">
         <div class="column">
           <p class="has-text-justified">
-            <b>Scenes:</b> We use a manually-selected subset of 48 photorealistic scans of indoor environments from the
+            <b>Scenes:</b> We use a manually-selected subset of 55 photorealistic scans of indoor environments from the
             Gibson dataset.
             These 55 scenes are uncluttered ‘empty’ apartments/houses, i.e. they contain no or very few furniture as part
             of the scanned mesh. Scanned object meshes are programmatically inserted into these scenes to create episodes.
@@ -168,18 +168,22 @@
         Agent Specification
       </h2>
       <p class="has-text-justified">
-        <b>Agent:</b> We use a manually-selected subset of 48 photorealistic scans of indoor environments from the
-        Gibson dataset.
-        These 45 scenes are uncluttered ‘empty’ apartments/houses, i.e. they contain no or very few furniture as part
-        of the scanned mesh. Scanned object meshes are programmatically inserted into these scenes to create episodes.
-        This combination of empty houses and inserted objects allows
-        for controlled generation of training and testing episodes.
+        <b>Agent:</b>  The agent is a virtual Locobot. The
+        simulated agent’s base-radius is 0.61m and the height is
+        0.175m which matches the LoCoBot dimensions.
+        
       </p>
       <br>
       <p class="has-text-justified">
-        <b>Sensors</b>: We use object scans from the YCB Dataset. These objects are small enough that they can pass
-        through doors
-        and hallways within the house.
+        <b>Sensors</b>: The
+        agent is equipped with an RGB-D camera placed at the
+        height of 1.5m from the center of the agent’s base and is
+        looking down 30 degrees. The sensor has a resolution of 256x256 pixels and a 90 degree field of view.
+        To mimic the depth camera’s limitations, we clip simulated
+        depth sensing to 10m. The agent is also equipped with a
+        GPS+Compass sensor, providing agent location (x, y, z)
+        and heading (azimuth angle) in an episodic coordinate system defined by agent’s spawn location (origin) and heading
+        (0).
       </p>
       <br>
       <div class="columns">
