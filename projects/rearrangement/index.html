@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="keywords"
+    content="object rearrangement, habitat, habitat-sim, habitat-api, house cleanup, navigation, deep learning, reinforcement learning, computer vision, neural networks, georgia tech, fair">
+
+  <title>House Cleanup in Habitat</title>
+  <meta name="description"
+    content="Situating vision-and-language navigation in continuous environments to bring instruction following agents closer to reality">
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="House Cleanup in Habitat" />
+  <meta property="og:url" content="https://dexter1691.github.io/rearrangement/" />
+  <meta property="og:description"
+    content="Situating vision-and-language navigation in continuous environments to bring instruction following agents closer to reality" />
+  <meta property="og:site_name" content="House Cleanup in Habitat" />
+  <meta property="og:image" content="https://jacobkrantz.github.io/vlnce/static/img/vlnce/vlnce-setting.png" />
+  <meta property="og:image:url" content="https://jacobkrantz.github.io/vlnce/static/img/vlnce/vlnce-setting.png" />
+
+  <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/freelancer.css">
+  <link rel="stylesheet" type="text/css" href="/css/rearrangement.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
+  <script src="js/modernizr.js"></script>
+
+  <!-- <link rel="stylesheet" type="text/css" href="/vlnce/static/css/main.2f91a3.css" media="screen,projection"> -->
+</head>
+
+<body>
+
+  <!-- <div class="top-strip"></div> -->
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/rearrangement/">House Cleanup in Habitat</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#overview">Task Description</a>
+          </li>
+          <li>
+            <a href="#data">Data</a>
+          </li>
+          <li>
+            <a href="#action">Embodiement</a>
+          </li>
+          <li>
+          <li>
+            <a href="#action">Action Specification</a>
+          </li>
+          <li>
+            <a href="#Action Specification">Metrics</a>
+          </li>
+          <li>
+            <a href="https://github.com/dexter1691/">Colab Notebook</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="//gatech.edu">
+              <img style="height:20px;" src="/img/gt.jpg">
+            </a>
+          </li>
+          <li>
+            <a href="//research.fb.com">
+              <img style="height:15px;" src="/img/fair.jpg">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-content">
+      <p><br /></p>
+
+      <h1 id="overview">Vision and Language Navigation in Continuous Environments</h1>
+
+      <div class="row">
+
+        <div class="col-xs-12 text-center">
+          <br />
+          <img src="/vlnce/static/img/vlnce/VLNCE_vs_VLN.gif" alt="VLNCE trajectory gif" />
+        </div>
+
+        <div class="col-xs-12">
+          <br />
+          <p>
+            Vision and Language Navigation in Continuous Environments (VLN-CE) is an instruction-guided navigation task
+            with crowdsourced instructions, realistic environments, and unconstrained agent navigation. The agent is
+            given first-person (egocentric) vision and a human-generated instruction, such as <i>"Go down the hall and
+              turn left at the wooden desk. Continue until you reach the kitchen and then stop by the kettle".</i> Using
+            this input alone, the agent must take control actions (e.g. <b>MOVE-FORWARD 0.25m</b>, <b>TURN-LEFT 15
+              degrees</b>) to navigate to the goal. VLN-CE lifts assumptions of the <a
+              href="https://bringmeaspoon.org/">
+              original VLN task</a> and aims to bring simulated agents closer to reality.
+          </p>
+          <br />
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <img src="/vlnce/static/img/vlnce/vlnce-setting.png" alt="VLNCE setting" />
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <br />
+          <h3>
+            <b>
+              The VLN-CE codebase and baseline models are available at:<br /><a class="poplink"
+                href="https://github.com/jacobkrantz/VLN-CE">github.com/jacobkrantz/VLN-CE</a>
+            </b>
+          </h3>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-xs-12">
+          <span style="color:#e74c3c;font-weight:400;">Jul 2020</span> — Paper accepted to <b>ECCV 2020</b>!
+        </div>
+        <div class="col-xs-12">
+          <span style="color:#e74c3c;font-weight:400;">Apr 2020</span> — <a
+            href="https://github.com/jacobkrantz/VLN-CE">PyTorch code for training and evaluating VLN-CE models</a> is
+          now available!
+        </div>
+        <div class="col-xs-12">
+          <span style="color:#e74c3c;font-weight:400;">Dec 2019</span> — <a
+            href="https://github.com/facebookresearch/habitat-api">VLN-CE v1 dataset</a> is now available in the
+          official Habitat API!
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments</h3>
+        </div>
+        <div class="col-xs-12" style="margin-top: 3px; color: #666;">
+          Jacob Krantz, Erik Wijmans, Arjun Majumdar, Dhruv Batra, Stefan Lee<br />
+        </div>
+        <div class="col-xs-12" style="margin-top: 3px; color: #666;">
+          ECCV 2020
+          [<a href="/vlnce/bib/vlnce.bib.txt">Bibtex</a>]
+          [<a href="https://arxiv.org/abs/2004.02857">PDF</a>]
+          [<a href="https://github.com/jacobkrantz/VLN-CE">Code</a>]
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="https://arxiv.org/abs/2004.02857">
+            <img class="thumb" src="/vlnce/static/img/vlnce/thumb.jpg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="/vlnce/static/img/vlnce/both_models.png" />
+        </div>
+      </div>
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="vid-container">
+            <iframe src="https://www.youtube.com/embed/SRW9u_w5AV0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+      <hr />
+      <!-- 
+<h1 id="people">People</h1>
+
+<p><br /></p>
+<div class="row">
+  <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-6">
+    <a href="https://jacobkrantz.github.io/">
+      <img class="people-pic" src="/vlnce/static/img/people/jacob.jpg" />
+    </a>
+    <div class="people-name">
+      <a href="https://jacobkrantz.github.io/">Jacob Krantz</a><br />
+      <affiliation>Oregon State University</affiliation>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-6">
+    <a href="https://wijmans.xyz">
+      <img class="people-pic" src="/vlnce/static/img/people/erik.jpg" />
+    </a>
+    <div class="people-name">
+      <a href="https://wijmans.xyz">Erik Wijmans</a><br />
+      <affiliation>Georgia Tech &amp; Facebook AI Research</affiliation>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-6">
+    <a href="https://arjunmajum.github.io/">
+      <img class="people-pic" src="/vlnce/static/img/people/arjun.jpg" />
+    </a>
+    <div class="people-name">
+      <a href="https://arjunmajum.github.io/">Arjun Majumdar</a><br />
+      <affiliation>Georgia Tech</affiliation>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-6">
+    <a href="https://www.cc.gatech.edu/~dbatra/">
+      <img class="people-pic" src="/vlnce/static/img/people/dhruv.jpg" />
+    </a>
+    <div class="people-name">
+      <a href="https://www.cc.gatech.edu/~dbatra/">Dhruv Batra</a><br />
+      <affiliation>Georgia Tech &amp; Facebook AI Research</affiliation>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-6">
+    <a href="http://web.engr.oregonstate.edu/~leestef/" style="border:0;">
+      <img class="people-pic" src="/vlnce/static/img/people/stefan.jpg" />
+    </a>
+    <div class="people-name">
+      <a href="http://web.engr.oregonstate.edu/~leestef/">Stefan Lee</a><br />
+      <affiliation>Oregon State University</affiliation>
+    </div>
+  </div>
+</div>
+<hr /> -->
+      <!-- 
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p><a name="/vlnce/acknowledgements"></a></p>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      We thank Anand Koshy for his implementation of the dynamic time warping metric. The Georgia Tech effort was
+      supported in part by NSF, AFRL, DARPA, ONR YIPs, ARO PECASE, Amazon. The Oregon State effort was supported
+      in part by DARPA. The views and conclusions contained herein are those of the authors and should not be
+      interpreted as necessarily representing the official policies or endorsements, either expressed or implied,
+      of the U.S. Government, or any sponsor.
+    </p>
+  </div>
+</div>
+<hr />
+
+<div class="row">
+  <div class="col-xs-6">
+    <span style="font-weight:400;">Email</span> — krantzja@oregonstate.edu
+  </div>
+  <br />
+</div> -->
+
+    </div>
+  </div>
+
+  <br>
+
+  <!-- Google analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-163181097-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

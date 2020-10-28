@@ -1,0 +1,18 @@
+body {
+    font-family:'Open Sans', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-weight: 300;
+    font-size: 16px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@media (min-width: 1200px) {
+    .container {
+      width: 940px;
+    }
+}
+
+#evaluation.ol {
+    padding: 2em 2em 2em 2em;
+}
