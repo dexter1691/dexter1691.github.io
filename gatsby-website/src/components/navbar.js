@@ -8,7 +8,7 @@ const Navbar = () => {
     };
   
     return (
-      <nav className="bg-blue-500 py-4">
+      <nav className="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-100 bg-slate-900 py-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             {/* Brand/logo */}

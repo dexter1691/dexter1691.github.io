@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Navbar from "../components/navbar"
+import News from "../components/news"
 import * as styles from "../components/index.module.css"
 
 const links = [
@@ -70,9 +71,8 @@ const moreLinks = [
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
-const IndexPage = () => {
-  return (<div>
-    <Navbar/>
+const DefaultLayout = () => {
+  return (
     <Layout>
     <div className={styles.textCenter}>
       <StaticImage
@@ -118,7 +118,24 @@ const IndexPage = () => {
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))}
-  </Layout></div>
+  </Layout>
+  )  
+}
+
+
+const IndexPage = () => {
+  return (
+  <div className="container mx-auto">
+      <Navbar/>
+      <div className="flex flex-row">
+      <div className="flex-none p-4 bg-gray-100">
+            <h1>Harsh Agrawal</h1>
+      </div>
+      <div className="flex-auto p-4">
+        <News/>
+      </div>
+    </div>
+  </div>
   )
 }
 
