@@ -13,7 +13,7 @@ const news = [
 const News = () => {
     return (
         <div>
-            <h1 className="text-3xl mb-3">News</h1>
+            <h1>News</h1>
             <table className="flex flex-col w-full">
                 <tbody>
                     {news.map((item) => {
