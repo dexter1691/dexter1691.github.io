@@ -10,52 +10,101 @@ import Text from '../assets/text.jpg';
 
 <div class="max-w-7xl bg-white mx-auto py-4 hidden md:block px-4">
     <div class="font-bold text-3xl mb-4">News</div>
-    <div class="flex flex-row gap-8 overflow-x-auto pb-4">
-        <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2">
-           <a href="#LLARP">
+    <div class="news-container flex flex-row gap-8 overflow-x-auto pb-4">
+        <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2 group relative">
+           <a href="#LLARP" class="news-item">
            <img class="" src={ICLR.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">LLaRP got accepted at ICLR </p>
-           <p class="px-2 py-1 font-inconsolata font-medium">Jan, 2024</p>      
+           <p class="px-2 py-1 font-inconsolata font-medium">Jan, 2024</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+             LLaRP is a way to ground multi-modal models in different embodiments and corresponding action spaces.
+           </div>
            </a>
        </div>
-       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2">
+       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2 group relative">
            <!-- <a href="#AppleJob"> -->
            <img class="" src={AppleJob.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">Started as a Research Scientist at Apple MLR </p>
            <p class="px-2 py-1 font-inconsolata font-medium">June, 2023</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+             I joined Apple as a Research Scientist in the Machine Learning Research team. I will work on building interactive and embodied agents.
+           </div>
        </div>
-       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl rotate-2">
+       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl rotate-2 group relative">
            <img class="" src={Defense.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">Defended my PhD Thesis</p>
            <p class="px-2 py-1 font-inconsolata font-medium">May, 2023</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+             I defended my PhD thesis titled "Towards multi-modal AI systems with open-world cognition".
+           </div>
        </div>
-       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl rotate-2">
-           <a href="#Housekeep">
+       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl rotate-2 group relative">
+           <a href="#Housekeep" class="news-item">
            <img class="" src={HouseKeep.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">HouseKeep got accepted at ECCV </p>
            <p class="px-2 py-1 font-inconsolata font-medium">Sep, 2022</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+             HouseKeep is a benchmark to test common-sense reasoning in embodied agents.
+           </div>
            </a>
        </div>
-       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2">
-           <a href="#KnownUnknowns">
+       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2 group relative">
+           <a href="#KnownUnknowns" class="news-item">
            <img class="" src={Reason.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">Known Unknowns accepted at UAI as Oral </p>
            <p class="px-2 py-1 font-inconsolata font-medium">Aug, 2021</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            In this work, we teach agents how to reason using elimination.
+           </div>
            </a>
        </div>
-        <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2">
-           <a href="#PointNav">
+        <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2 group relative">
+           <a href="#PointNav" class="news-item">
            <img class="" src={PointGoal.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">Point Goal Navigation accepted at ICCV </p>
            <p class="px-2 py-1 font-inconsolata font-medium">Nov, 2021</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            We show that agent can learn to navigate in a 3D environment using pure vision.
+           </div>
            </a>
        </div>
-       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2">
-           <a href="#TextVQA">
+       <div class="w-48 h-72 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-50 sm:rounded-2xl -rotate-2 group relative">
+           <a href="#TextVQA" class="news-item">
            <img class="" src={Text.src} alt="Harsh Agrawal" />
            <p class="px-2 py-1">Work on TextVQA accepted at ECCV </p>
            <p class="px-2 py-1 font-inconsolata font-medium">Sep, 2020</p>
+           <div class="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            We modify the transformer architecture to improve spatial understanding for improved text-based VQA.
+           </div>
            </a>
        </div>
     </div>
  </div>
+
+ <script>
+    const newsContainer = document.querySelector('.news-container');
+    const newsItems = newsContainer.querySelectorAll('.news-item');
+    newsItems.forEach(item => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log("hi");
+            const target = item.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(target);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' , block: 'center'});
+                targetElement.classList.add('bg-gray-50');
+                setTimeout(() => {
+                    targetElement.classList.remove('bg-gray-50');
+                }, 1500);
+            }
+        });
+    });
+    newsItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('bg-gray-50');
+        });
+        item.addEventListener('mouseleave', () => { 
+            item.classList.remove('bg-gray-50');
+        });
+    });
+ </script>
