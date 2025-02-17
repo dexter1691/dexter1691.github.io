@@ -1,0 +1,188 @@
+[
+    {
+        "title": "From Multimodal LLMs to Generalist Embodied Agents: Methods and Lessons",
+        "authors": "Andrew Szot, Bogdan Mazoure, Omar Attia, Aleksei Timofeev, Harsh Agrawal, Devon Hjelm, Zhe Gan, Zsolt Kira, Alexander Toshev",
+        "image": "../assets/gea.jpg",
+        "arxiv": "https://arxiv.org/abs/2412.08442",
+        "venue": "2025",
+        "tags": ["Embodied Agents", "Digital Agents"]
+    },
+    {
+        "title": "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+        "authors": "Zhangheng Li, Keen You, Haotian Zhang, Di Feng, Harsh Agrawal, Xiujun Li, Mohana Prasad Sathya Moorthy, Jeff Nichols, Yinfei Yang, Zhe Gan",
+        "image": "../assets/ferret-ui-2.png",
+        "arxiv": "https://arxiv.org/abs/2410.18967",
+        "venue": "ICLR 2025",
+        "tags": ["Digital Agents"]
+    },
+    {
+        "title": "Grounding Multimodal Large Language Models in Actions",
+        "authors": "Andrew Szot, Bogdan Mazoure, Harsh Agrawal, Devon Hjelm, Zsolt Kira, Alexander Toshev",
+        "image": "../assets/llarpv2.jpg",
+        "arxiv": "https://arxiv.org/abs/2406.07904",
+        "venue": "NeurIPS 2024",
+        "tags": ["Embodied Agents"]
+    },
+    {
+        "title": "Large Language Models as Generalizable Policies for Embodied Tasks",
+        "authors": "Andrew Szot, Max Schwarzer, Harsh Agrawal, Bogdan Mazoure, Walter Talbott Katherine Metcalf, Natalie Mackraz, Devon Hjelm, Alexander Toshev",
+        "image": "../assets/llarp.jpg",
+        "arxiv": "https://arxiv.org/abs/2310.17722",
+        "code": "https://github.com/apple/ml-llarp",
+        "webpage": "https://llm-rl.github.io/",
+        "venue": "ICLR, 2024",
+        "tags": ["Embodied Agents"]
+    },
+    {
+        "title": "Simple and Effective Synthesis of Indoor 3D Scenes",
+        "authors": "Jing Yu Koh*, Harsh Agrawal*, Dhruv Batra, Richard Tucker, Austin Waters, Honglak Lee, Yinfei Yang, Jason Baldridge, Peter Anderson",
+        "image": "../assets/re10k-examples.png",
+        "arxiv": "https://arxiv.org/abs/2204.02960",
+        "code": "https://github.com/google-research/se3ds",
+        "video": "https://www.youtube.com/watch?v=4fVG0vg7yXI",
+        "venue": "AAAI 2023",
+        "tags": ["Generative AI", "Computer Vision"]
+    },
+    {
+        "title": "Housekeep: Tidying Virtual Households using Commonsense Reasoning",
+        "authors": "Yash Kant, Arun Ramachandran, Sriram Yenamandra, Igor Gilitschenski, Dhruv Batra, Andrew Szot*, Harsh Agrawal*",
+        "image": "../assets/housekeep-teaser.jpg",
+        "arxiv": "https://arxiv.org/abs/2205.10712",
+        "webpage": "https://yashkant.github.io/housekeep",
+        "code": "https://github.com/yashkant/housekeep",
+        "venue": "ECCV 2022",
+        "tags": ["Embodied Agents"]
+    },
+    {
+        "title": "SOAT: A Scene- and Object-Aware Transformer for Vision-and-Language Navigation",
+        "authors": "Abhinav Moudgil, Arjun Majumdar, Harsh Agrawal, Stefan Lee, Dhruv Batra",
+        "image": "../assets/soat.png",
+        "arxiv": "https://arxiv.org/abs/2110.14143",
+        "venue": "NeurIPS 2021",
+        "tags": ["Embodied Agents", "Vision & Language"]
+    },
+    {
+        "title": "Known unknowns: Learning novel concepts using reasoning-by-elimination",
+        "authors": "Harsh Agrawal, Eli A. Meirom, Yuval Atzmon, Shie Mannor, Gal Chechik",
+        "image": "../assets/uai2021_teaser.png",
+        "arxiv": "https://proceedings.mlr.press/v161/agrawal21a/agrawal21a.pdf",
+        "talk": "https://drive.google.com/file/d/1aqM2XWzicxCGEe6BbVHKozkmdvvUd2kp/view?usp=sharing",
+        "venue": "UAI 2021 *Long Talk*",
+        "tags": ["Vision & Language", "Reasoning"]
+    },
+    {
+        "title": "The Surprising Effectiveness of Visual Odometry Techniques for Embodied PointGoal Navigation",
+        "authors": "Xiaoming Zhao, Harsh Agrawal, Dhruv Batra, Alex Schwing",
+        "image": "../assets/pointnav_teaser.png",
+        "arxiv": "https://arxiv.org/abs/2108.11550",
+        "webpage": "https://xiaoming-zhao.github.io/projects/pointnav-vo/",
+        "code": "https://github.com/Xiaoming-Zhao/PointNav-VO",
+        "venue": "ICCV 2021",
+        "tags": ["Embodied Agents"]
+    },
+    {
+        "title": "Contrast and Classify: Alternate Training for Robust VQA",
+        "authors": "Yash Kant, Abhinav Moudgil, Dhruv Batra, Devi Parikh, Harsh Agrawal",
+        "image": "../assets/concat-vqa-large.png",
+        "arxiv": "https://arxiv.org/abs/2010.06087",
+        "project": "https://yashkant.github.io/projects/concat-vqa.html",
+        "code": "https://github.com/yashkant/concat-vqa",
+        "venue": "ICCV 2021",
+        "tags": ["Vision & Language"]
+    },
+    {
+        "title": "Spatially Aware Multimodal Transformers for TextVQA",
+        "authors": "Yash Kant, Dhruv Batra, Peter Anderson, Alexander Schwing, Devi Parikh, Jiasen Lu, Harsh Agrawal",
+        "image": "../assets/textvqa.png",
+        "arxiv": "https://arxiv.org/abs/2007.12146",
+        "code": "https://github.com/yashkant/sam-textvqa",
+        "talk": "https://www.youtube.com/watch?v=uPZra6HfLd0",
+        "venue": "ECCV 2020",
+        "tags": ["Vision & Language"]
+    },
+    {
+        "title": "Sequential Latent Spaces for Modeling the Intention During Diverse Image Captioning",
+        "authors": "Jyoti Aneja*, Harsh Agrawal*, Dhruv Batra, Alexander Schwing",
+        "image": "../assets/seq_cvae.png",
+        "arxiv": "https://arxiv.org/abs/1908.08529",
+        "venue": "ICCV 2019",
+        "tags": ["Vision & Language"]
+    },
+    {
+        "title": "nocaps: novel object captioning at scale",
+        "authors": "Harsh Agrawal*, Karan Desai*, Yufei Wang, Xinlei Chen, Rishabh Jain, Mark Johnson, Dhruv Batra, Devi Parikh, Stefan Lee, Peter Anderson",
+        "image": "../assets/nocaps_teaser.jpg",
+        "arxiv": "https://arxiv.org/abs/1812.08658",
+        "project": "https://nocaps.org",
+        "venue": "ICCV 2019",
+        "tags": ["Vision & Language"]
+    },
+    {
+        "title": "Sort Story: Sorting Jumbled Images and Captions into Stories",
+        "authors": "Harsh Agrawal*, Arjun Chandrasekaran*, Dhruv Batra, Devi Parikh, Mohit Bansal",
+        "image": "../assets/sortstory.png",
+        "arxiv": "https://arxiv.org/abs/1606.07493",
+        "podcast": "https://www.youtube.com/watch?v=CMRy4Y-ZwGE",
+        "venue": "EMNLP 2016",
+        "tags": ["Vision & Language", "Reasoning"]
+    },
+    {
+        "title": "Human Attention in Visual Question Answering: Do Humans and Deep Networks Look at the Same Regions?",
+        "authors": "Abhishek Das*, Harsh Agrawal*, C. Lawrence Zitnick, Devi Parikh, Dhruv Batra",
+        "image": "../assets/vqahat.png",
+        "arxiv": "https://arxiv.org/abs/1606.03556",
+        "media": [
+            "https://www.theverge.com/2016/7/12/12158238/first-click-deep-learning-algorithmic-black-boxes",
+            "https://nautil.us/issue/40/learning/is-artificial-intelligence-permanently-inscrutable",
+            "https://www.newscientist.com/article/2095616-robot-eyes-and-humans-fix-on-different-things-to-decode-a-scene/",
+            "https://www.technologyreview.com/s/601819/ai-is-learning-to-see-the-world-but-not-the-way-humans-do/",
+            "https://www.techradar.com/news/world-of-tech/robots-and-humans-see-the-world-differently-but-we-don-t-know-why-1324165"
+        ],
+        "venue": [
+            "Computer Vision and Image Understanding (CVIU) 2017",
+            "EMNLP 2016",
+            "ICML 2016 Workshop on Visualization for Deep Learning *Best Student Paper*"
+        ],
+        "tags": ["Vision & Language"]
+    },
+    {
+        "title": "Object-Proposal Evaluation Protocol is 'Gameable'",
+        "authors": "Neelima Chavali*, Harsh Agrawal*, Aroma Mahendru*, Dhruv Batra",
+        "image": "../assets/objectproposals.png",
+        "project": "https://filebox.ece.vt.edu/~aroma/web/object-proposals.html",
+        "arxiv": "https://arxiv.org/abs/1505.05836",
+        "code": "https://github.com/Cloud-CV/object-proposals",
+        "venue": "CVPR 2016 *Spotlight*",
+        "tags": ["Computer Vision"]
+    },
+    {
+        "title": "CloudCV: Large Scale Distributed Computer Vision as a Cloud Service",
+        "authors": "Harsh Agrawal, Clint Solomon Mathialagan, Yash Goyal, Neelima Chavali, Prakriti Banik, Akrit Mohapatra, Ahmed Osman, Dhruv Batra",
+        "image": "../assets/cloudcv_teaser.png",
+        "project": "http://cloudcv.org",
+        "arxiv": "https://arxiv.org/abs/1506.04130",
+        "code": "https://github.com/Cloud-CV",
+        "venue": "Book Chapter: Mobile Cloud Visual Media Computing, 265-290",
+        "tags": ["ML Systems"]
+    },
+    {
+        "title": "EvalAI: Towards Better Evaluation Systems for AI Agents",
+        "authors": "Deshraj Yadav, Rishabh Jain, Harsh Agrawal, Prithvijit Chattopadhyay, Taranjeet Singh, Akash Jain, Shiv Baran Singh, Stefan Lee, Dhruv Batra",
+        "image": "../assets/evalai_teaser.png",
+        "arxiv": "https://arxiv.org/abs/1902.03570",
+        "project": "https://evalai.cloudcv.org",
+        "code": "https://github.com/Cloud-CV/EvalAI",
+        "venue": "AI Systems Workshop (SOSP 2019)",
+        "tags": ["ML Systems"]
+    },
+    {
+        "title": "Fabrik: An Online Collaborative Neural Network Editor",
+        "authors": "Utsav Garg, Viraj Prabhu, Deshraj Yadav, Ram Ramrakhya, Harsh Agrawal, Dhruv Batra",
+        "image": "../assets/fabrik_teaser.png",
+        "arxiv": "https://arxiv.org/abs/1810.11649",
+        "project": "https://fabrik.cloudcv.org",
+        "code": "https://github.com/Cloud-CV/Fabrik",
+        "venue": "AI Systems Workshop (SOSP 2019)",
+        "tags": ["ML Systems"]
+    }
+]

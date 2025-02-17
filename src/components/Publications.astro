@@ -1,0 +1,115 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { PublicationsDropdown } from "./PublicationsDropdown";
+import publications from '../data/publications.json';
+import github_icon from '../assets/github-mark.svg';
+import arxiv_icon from '../assets/arxiv-logomark-small.svg';
+const images = import.meta.glob<ImageMetadata>('../assets/*.{jpg,png,jpeg,gif}');
+
+const formatVenue = (authorString) => {
+  // Split the venue string by asterisks and map each part
+  return authorString.split('*').map((part, index) => {
+    // If index is odd (inside asterisks), wrap in bold tags
+    if (index % 2 === 1) {
+        return `<span class="leading-7 font-inconsolata font-extrabold text-[#18bc9c]">(${part})</span>`;
+    }
+    return `<span class="leading-7 font-inconsolata font-medium text-[#18bc9c]">${part}</span>`;
+  }).join(' ');
+};
+---
+
+<div class="max-w-7xl bg-white py-4 mx-auto px-4">
+    <div class="font-medium text-3xl mb-4">Publications</div>
+    <div id = "filters" class="container my-4">
+        <div class="hidden md:flex gap-4 mb-8 md:flex-row">
+            <a data-category="All" class="filter-btn btn flex px-4 py-2 cursor-pointer transition-colors duration-100 hover:bg-[#18bc9c] hover:text-white bg-[#18bc9c] text-white">
+                All
+            </a>
+            <a data-category="Embodied Agents" class="filter-btn btn flex-initial bg-gray-100 px-4 py-2 cursor-pointer transition-colors duration-100 hover:bg-[#18bc9c] hover:text-white" >
+                Embodied Agents
+            </a>
+            <a data-category="Vision & Language" class="filter-btn btn flex-initial bg-gray-100 px-4 py-2 cursor-pointer transition-colors duration-100 hover:bg-[#18bc9c] hover:text-white">
+                Vision & Language
+            </a>
+            <a data-category="Reasoning" class="filter-btn btn flex-initial bg-gray-100 px-4 py-2 cursor-pointer transition-colors duration-100 hover:bg-[#18bc9c] hover:text-white">
+                Reasoning
+            </a>
+            <a data-category="ML Systems" class="filter-btn btn flex-initial bg-gray-100 px-4 py-2 cursor-pointer transition-colors duration-100 hover:bg-[#18bc9c] hover:text-white">
+                ML Systems
+            </a>
+        </div>
+    </div>
+    <div class="flex md:hidden">
+        <PublicationsDropdown client:load />
+    </div>
+
+    <div id = "publications" class="container my-4">
+        {publications.map((publication) => (
+            <div class="publication" data-category={publication.tags.join(',')}>
+                <div class="flex flex-col md:flex-row gap-4 my-8">
+                    <div class="flex-none md:w-1/3">
+                        <Image src={images[publication.image]()} alt={publication.title} class="object-cover" />
+                    </div>
+                    <div class="flex-initial">
+                        <h3 class="leading-7 font-medium text-lg">{publication.title}</h3>
+                        <p class="leading-7">{publication.authors.split(',').map((author, author_index, authors) => {
+                            const author_abbreviated = author.trim().split(' ').map((name, i, arr) => i === arr.length-1 ? name : name[0] + '.').join(' ');
+                            return author.trim().includes('Harsh Agrawal') ? 
+                                <b>{author_abbreviated + (author_index !== authors.length-1 ? ', ' : '')}</b> : 
+                                author_abbreviated + (author_index !== authors.length-1 ? ', ' : '')
+                        })}</p>
+                        {Array.isArray(publication.venue) ? 
+                            publication.venue.map((v) => (
+                              <div set:html={formatVenue(v)} />
+                            ))
+                            : <div set:html={formatVenue(publication.venue)} />
+                        }
+                        <div class="flex gap-4 mt-2">
+                            {publication.arxiv && <a class="btn bg-gray-100 px-4 py-2 flex items-center gap-2" href={publication.arxiv} target="_blank" rel="noopener noreferrer">
+                                <Image src={arxiv_icon} alt="Arxiv" class="w-4 h-4" />
+                                Arxiv
+                            </a>}
+                            {publication.code && <a class="btn bg-gray-100 px-4 py-2 flex items-center gap-2" href={publication.code} target="_blank" rel="noopener noreferrer">
+                                <Image src={github_icon} alt="Github" class="w-4 h-4" />
+                                Code
+                            </a>}
+                            {publication.webpage && <a class="btn bg-gray-100 px-4 py-2 flex items-center gap-2" href={publication.webpage} target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                                Webpage
+                            </a>}
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        ))}
+    </div>
+    <script>
+        import { category } from './stores/category';
+
+        const filterPublications = (category) => {
+            document.querySelectorAll('.publication').forEach((el) => {
+            el.style.display =
+                category === "All" || el.dataset.category.split(',').includes(category) ? "" : "none";
+            });
+        }
+        const updateActiveFilter = (btn) => {
+            document.querySelectorAll('.filter-btn').forEach((el) => {
+                el.classList.remove('bg-[#18bc9c]', 'text-white');
+                el.classList.add('bg-gray-100', 'text-black');
+            });
+            btn.classList.remove('bg-gray-100', 'text-black');
+            btn.classList.add('bg-[#18bc9c]', 'text-white');
+            category.set(btn.dataset.category);
+        }
+        document.querySelectorAll('.filter-btn').forEach((el) => {
+            el.addEventListener('click', () => updateActiveFilter(el));
+            el.addEventListener('click', () => filterPublications(el.dataset.category));
+        });
+    </script>
+</div>

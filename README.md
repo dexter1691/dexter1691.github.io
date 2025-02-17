@@ -1,2 +1,3 @@
-# dexter1691.github.io
-Harsh Agrawal - Personal Website
+# Personal Website
+
+This is my personal website built with Astro.
